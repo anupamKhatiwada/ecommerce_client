@@ -87,6 +87,25 @@ export class AppComponent implements OnInit {
 
   }
 
+  /*
+
+    The below is the product trigger called when a product is either added to cart
+    or should be bought now. 
+    
+    Both functionalities are at the core same. The difference is when a product 
+    is added to cart we stop displaying the product in the main page and on the
+    cart button on the navbar we show the number of products present in the cart.
+
+    On pressing the buy now button it should add the specific product to the cart
+    and we should redirect to the cart page. Routing needs to be implemented as
+    as cart should have a different route.
+
+  */
+
+  productTriggerCalled(event: Event, index: Number) {
+    console.log(event, index)
+  }
+
 
 
 

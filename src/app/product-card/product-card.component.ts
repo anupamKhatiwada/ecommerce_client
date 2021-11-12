@@ -57,7 +57,7 @@ export class ProductCardComponent implements OnInit {
 
   @Input() product!: Product;
 
-  @Output() open: EventEmitter<any> = new EventEmitter();
+  @Output() toCall: EventEmitter<any> = new EventEmitter();
 
   ngOnInit(): void {
   }
@@ -80,12 +80,18 @@ export class ProductCardComponent implements OnInit {
     and the product.
   */
 
-  addToCart() {
+  // addToCart(a:String) {
+  //   this.toCall.emit(a);
+  // }
 
+  // buyNow() {
+
+  // }
+
+
+  addOrBuy(todo: String) {
+    this.toCall.emit(todo);
   }
 
-  buyNow() {
-
-  }
 
 }

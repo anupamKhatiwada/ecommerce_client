@@ -22,8 +22,8 @@
 <ng-template #elseBlockShow>
   <p>
     <mat-grid-list [cols]="gridNumber" rowHeight="1:1.2">
-      <mat-grid-tile *ngFor="let product of products;">
-        <product-card [product]="product">
+      <mat-grid-tile *ngFor="let product of products;index as i;">
+        <product-card (toCall)='productTriggerCalled($event,i)' [product]="product">
         </product-card>
       </mat-grid-tile>
     </mat-grid-list>
