@@ -1,0 +1,22 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.icon-display {
+  transform: scale(2);
+  color: black;
+}
+
+
+.add-pad {
+  padding: 0 20px 0 20px;
+}
+
+.main-banner {
+
+
+  text-align: center;
+  font-size: 96px;
+  padding: 80px 0;
+  /* color: ; */
+}
