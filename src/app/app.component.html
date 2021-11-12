@@ -23,7 +23,7 @@
   <p>
     <mat-grid-list [cols]="gridNumber" rowHeight="1:1.2">
       <mat-grid-tile *ngFor="let product of products;">
-        <product-card [product]="product" (click)="viewProduct(product)">
+        <product-card [product]="product">
         </product-card>
       </mat-grid-tile>
     </mat-grid-list>

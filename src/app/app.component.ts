@@ -15,11 +15,6 @@ import { ProductService } from './services/product-service.service';
 export class AppComponent implements OnInit {
 
 
-
-
-
-
-
   showSpinner: Boolean = true;
 
 
@@ -69,8 +64,6 @@ export class AppComponent implements OnInit {
 
   }
 
-
-
   // ---------------------------------------------------------------- //
 
 
@@ -95,11 +88,7 @@ export class AppComponent implements OnInit {
   }
 
 
-  viewProduct(product: Product) {
 
-
-
-  }
 
 
 

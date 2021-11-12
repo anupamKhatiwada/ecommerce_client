@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 
 export class Product {
@@ -38,11 +38,6 @@ export class Product {
 
     }
 
-
-
-
-
-
   }
 
 
@@ -62,7 +57,35 @@ export class ProductCardComponent implements OnInit {
 
   @Input() product!: Product;
 
+  @Output() open: EventEmitter<any> = new EventEmitter();
+
   ngOnInit(): void {
+  }
+
+
+
+  /*
+    Emit two events on the below to functions.
+    Simplest thing to do would be to emit the product itself but there are 
+    a few caveats to this step. Once we emit and recieve the product in the
+    parent we need to find its index because we need to hide that product from the
+    product list and show it in the cart. If we send product from here we will not
+    be able to access its index. We need to think of a mixed approach 
+    which will allow us to send the product and keep track of its index 
+    from the product list.
+
+    Actually it can be done. We can pass in the product from here or even the event
+    ie. is it added to cart or user is buying now.
+    We can catch the particular event in the parent and use it along with the index
+    and the product.
+  */
+
+  addToCart() {
+
+  }
+
+  buyNow() {
+
   }
 
 }
