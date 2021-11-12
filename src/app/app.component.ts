@@ -5,6 +5,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 import { takeUntil } from 'rxjs/operators';
 import { Product } from './product-card/product-card.component';
+import { ProductService } from './services/product-service.service';
 
 @Component({
   selector: 'app-root',
@@ -15,21 +16,14 @@ export class AppComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
-    // throw new Error("Method not implemented.");
-
-    setTimeout(() => this.showSpinner = false, 3000)
 
 
 
-    this.arr.length = 100;
-    this.arr.fill(1);
-  }
-
-
-  arr: Number[] = []
 
   showSpinner: Boolean = true;
+
+
+  // ------------------------------------------------------------------ //
 
 
   // Implementation of responsiveness for the grid of products
@@ -46,7 +40,7 @@ export class AppComponent implements OnInit {
     [Breakpoints.XLarge, '5'],
   ]);
 
-  constructor(breakpointObserver: BreakpointObserver) {
+  constructor(breakpointObserver: BreakpointObserver, private productService: ProductService) {
     breakpointObserver
       .observe([
         Breakpoints.XSmall,
@@ -75,7 +69,40 @@ export class AppComponent implements OnInit {
 
   }
 
+
+
+  // ---------------------------------------------------------------- //
+
+
+  // Fill this product array with products from the data base
+  products: Array<Product> = [];
+
   productOne: Product = new Product(null, 1, "lundesh", "electronics", 5000, "model-one", 5, "https://material.angular.io/assets/img/examples/shiba2.jpg")
+
+
+
+  ngOnInit(): void {
+
+    // Display spinner when initial data arrives from fetch product service
+    setTimeout(() => this.showSpinner = false, 3000);
+
+
+
+    for (let i = 0; i < 50; i++) {
+      this.products.push(JSON.parse(JSON.stringify(this.productOne)))
+    }
+
+  }
+
+
+  viewProduct(product: Product) {
+
+
+
+  }
+
+
+
 
 
 

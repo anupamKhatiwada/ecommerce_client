@@ -15,24 +15,17 @@
 </nav>
 
 
-<!-- <p class="main-banner">Its always raining offers on SlipKart!!</p> -->
-
-
-
-<div *ngIf="showSpinner; else elseBlockShow" style="position: absolute;top: 50%;left: 50%;">
-
+<div *ngIf="showSpinner; else elseBlockShow" style="position: absolute; top: 50%; left: 50%;">
   <mat-spinner></mat-spinner>
-
 </div>
 
 <ng-template #elseBlockShow>
-
   <p>
     <mat-grid-list [cols]="gridNumber" rowHeight="1:1.2">
-      <mat-grid-tile *ngFor="let a of arr;">
-        <product-card matRipple style="cursor: pointer;" [product]=productOne></product-card>
+      <mat-grid-tile *ngFor="let product of products;">
+        <product-card [product]="product" (click)="viewProduct(product)">
+        </product-card>
       </mat-grid-tile>
     </mat-grid-list>
   </p>
-  <!-- <product-card *ngFor="le t a of arr;"></product-card> -->
 </ng-template>
